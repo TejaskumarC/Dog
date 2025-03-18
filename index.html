@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <title>Shunakas Kingdom</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -26,51 +24,11 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <!-- Custom CSS for 3D container -->
-    <style>
-        #dog-container {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            width: 200px;
-            height: 200px;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(255, 0, 0, 0.1); /* Temporary background for visibility */
-        }
-        
-        #dog-container canvas {
-            width: 100% !important;
-            height: 100% !important;
-            display: block;
-        }
-
-        #debug {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 10px;
-            font-family: monospace;
-            font-size: 12px;
-            z-index: 10000;
-            max-width: 400px;
-            max-height: 200px;
-            overflow: auto;
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Debug Panel -->
-    <div id="debug"></div>
-
-    <!-- 3D Dog Container -->
-    <div id="dog-container"></div>
-
+    <img id="default-cursor" src="img/cursor11.png" alt="Default Cursor" class="hidden-cursor">
+    <img id="pointer-cursor" src="img/cursor22.png" alt="Pointer Cursor" class="hidden-cursor">
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-2 px-lg-5">
@@ -106,6 +64,7 @@
         <div class="row py-3 px-lg-5">
             <div class="col-lg-4">
                 <a href="" class="navbar-brand d-none d-lg-block">
+                    <div id="dog-model-container"></div>
                     <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">Shunakas</span>Kingdom</h1>
                 </a>
             </div>
@@ -134,7 +93,7 @@
     <div class="container-fluid p-0">
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
             <a href="" class="navbar-brand d-block d-lg-none">
-                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Safety</span>First</h1>
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Shunakas Kingdom</span>First</h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -142,20 +101,10 @@
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav mr-auto py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="price.html" class="nav-item nav-link">Price</a>
-                    <a href="booking.html" class="nav-item nav-link">Booking</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="single.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="" class="nav-item nav-link">About</a>
+                    <a href="" class="nav-item nav-link">Our Service</a>
+                    <a href="" class="nav-item nav-link">Contact Us</a>
                 </div>
-                <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a>
             </div>
         </nav>
     </div>
@@ -167,13 +116,14 @@
         <div id="header-carousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
+                    <img class="w-100" src="img/dog1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
                             <h1 class="display-3 text-white mb-3">Keep Your Pet Happy</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Know More</a>
+                            <h5 class="text-white mb-3 d-none d-sm-block">Ensure your pet stays happy, healthy, and well-cared for with our expert services.
+                                From playtime to pampering, we provide the care your pet deserves.</h5>
+                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">know more</a>
                             <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
@@ -183,9 +133,10 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h3 class="text-white mb-3 d-none d-sm-block">Best Pet Services</h3>
-                            <h1 class="display-3 text-white mb-3">Pet Spa & Grooming</h1>
-                            <h5 class="text-white mb-3 d-none d-sm-block">Duo nonumy et dolor tempor no et. Diam sit diam sit diam erat</h5>
-                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Know</a>
+                            <h1 class="display-3 text-white mb-3">Dog Spa & Grooming</h1>
+                            <h5 class="text-white mb-3 d-none d-sm-block">Luxurious dog spa and grooming services for a clean and refreshed look.
+                                From baths to trims, we pamper your dog with gentle and expert care.</h5>
+                            <a href="" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">know more</a>
                             <a href="" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Learn More</a>
                         </div>
                     </div>
@@ -205,19 +156,17 @@
     </div>
     <!-- Carousel End -->
 
-
     <!-- About Start -->
     <div class="container py-5">
         <div class="row py-5">
             <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">About Us</h4>
                 <h1 class="display-4 mb-4"><span class="text-primary">Boarding</span> & <span class="text-secondary">Daycare</span></h1>
-                <h5 class="text-muted mb-3">Amet stet amet ut. Sit no vero vero no dolor. Sed erat ut sea. Just clita ut stet kasd at diam sit erat vero sit.</h5>
-                <p class="mb-4">Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                <h5 class="text-muted mb-3">Shunaka's Kingdom – Where Your Dog Feels at Home!</h5>
+                <p class="mb-4">We offer expert grooming and daycare services to keep your dog happy and healthy. From bathing and trimming to playtime and relaxation, our experienced team ensures a stress-free and fun experience. Trust us to give your furry friend the care they deserve!</p>
                 <ul class="list-inline">
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Best In Industry</h5></li>
                     <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5></li>
-                    <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Customer Support</h5></li>
                 </ul>
                 <a href="" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
             </div>
@@ -250,48 +199,54 @@
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Boarding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Boarding</h3>
+                        <p>We provide safe and comfortable dog boarding with personalized care.
+                            Your furry friend will feel at home with our attentive and loving staff.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Feeding</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Feeding</h3>
+                        <p>We ensure your dog enjoys nutritious and balanced meals tailored to their dietary needs.
+                            Fresh water and timely feeding keep your furry friend healthy and happy.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Grooming</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Grooming</h3>
+                        <p>Professional dog grooming services including bathing, trimming, and nail clipping.
+                            We ensure your dog looks and feels their best with gentle, expert care.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-cat display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Per Training</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Training</h3>
+                        <p>Expert dog training to improve behavior, obedience, and social skills.
+                            Positive reinforcement techniques ensure a happy and well-behaved dog.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-dog display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Exercise</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Exercise</h3>
+                        <p>Daily exercise sessions to keep your dog active, healthy, and happy.
+                            Supervised play and activities tailored to your dog’s energy level.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
                         <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
-                        <h3 class="mb-3">Pet Treatment</h3>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est magna diam eos, rebum sit vero stet ipsum justo</p>
+                        <h3 class="mb-3">Dog Treatment</h3>
+                        <p>Professional dog treatment for health, hygiene, and overall well-being.
+                            Our experienced staff provides gentle care and attention to every need.</p>
                         <a class="text-uppercase font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
@@ -310,7 +265,12 @@
             <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
                 <h4 class="text-secondary mb-3">Why Choose Us?</h4>
                 <h1 class="display-4 mb-4"><span class="text-primary">Special Care</span> On Pets</h1>
-                <p class="mb-4">Dolor lorem lorem ipsum sit et ipsum. Sadip sea amet diam sed ut vero no sit. Et elitr stet sed sit sed kasd. Erat duo eos et erat sed diam duo</p>
+                <ul>  
+                    <li><strong>Best in Industry:</strong> We provide top-quality grooming and daycare services, ensuring the best care for your pet.</li>  
+                    <li><strong>Emergency Services:</strong> We’re ready to handle any urgent needs with care and professionalism.</li>  
+                    <li><strong>Special Care:</strong> Personalized attention to make your dog feel safe, comfortable, and loved.</li>  
+                    <li><strong>Customer Support:</strong> Our team is always available to answer your questions and provide assistance.</li>  
+                </ul>
                 <div class="row py-2">
                     <div class="col-6">
                         <div class="d-flex align-items-center mb-4">
@@ -342,7 +302,7 @@
     </div>
     <!-- Features End -->
 
-    <!-- Team Start -->
+  <!-- Team Start -->
     <div class="container mt-5 pt-5 pb-3">
         <div class="d-flex flex-column text-center mb-5">
             <h4 class="text-secondary mb-3">Team Member</h4>
@@ -473,6 +433,7 @@
             </div>
         </div>
     </div>
+    <!-- Testimonial End -->
 
 
     <!-- Blog Start -->
@@ -492,7 +453,7 @@
                             <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
                         <a class="font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
@@ -507,7 +468,7 @@
                             <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
                         <a class="font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
@@ -522,20 +483,71 @@
                             <small class="mr-2"><i class="fa fa-folder text-muted"></i> Web Design</small>
                             <small class="mr-2"><i class="fa fa-comments text-muted"></i> 15</small>
                         </div>
-                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet ipsum justo</p>
+                        <p>Diam amet eos at no eos sit lorem, amet rebum ipsum clita stet, diam sea est diam eos, rebum sit vero stet justo</p>
                         <a class="font-weight-bold" href="">Read More</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-light text-dark mt-5 py-5 px-sm-3 px-md-5">
+    <!-- Blog End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-light text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 mb-5">
+            <center><image src="img/Shunkus.png" height="250" width="300"></image></center>
+        
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Get In Touch</h5>
+                        <p class="text-dark"><i class="fa fa-map-marker-alt mr-2"></i>Harsha Layout Kengeri Satellite Town Banglore Karnataka-560060</p>
+                        <p class="text-dark"><i class="fa fa-phone-alt mr-2"></i>+91 8698 476 861</p>
+                        <p class="text-dark"><i class="fa fa-envelope mr-2"></i>shunakas@gmail.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-dark rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-dark rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-dark rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-dark rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Popular Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-dark mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                            <a class="text-dark mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
+                            <a class="text-dark mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Newsletter</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
         <div class="row">
             <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
                 <p class="m-0 text-white">
-                    &copy; <a class="text-white font-weight-bold" href="#">Shunukas Kingdom<a>. All Rights Reserved. 
-					
-					Designed by <a class="text-white font-weight-bold" href="">SKYNEXI</a>
+                    &copy; <a class="text-white font-weight-bold" href="#">Shunakas Kingdom</a>. All Rights Reserved. 
+					Designed by <a class="text-white font-weight-bold" href="https://skynexi.com">Skynexi</a>
                 </p>
             </div>
             <div class="col-md-6 text-center text-md-right">
@@ -564,169 +576,19 @@
 
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <!-- Three.js Module Script -->
-    <script type="module">
-        import * as THREE from 'https://unpkg.com/three@0.156.1/build/three.module.js';
-        import { GLTFLoader } from 'https://unpkg.com/three@0.156.1/examples/jsm/loaders/GLTFLoader.js';
-
-        // Debug function
-        function debug(msg) {
-            console.log(msg);
-            const debugEl = document.getElementById('debug');
-            if (debugEl) {
-                debugEl.style.display = 'block';
-                debugEl.innerHTML += msg + '<br>';
-                debugEl.scrollTop = debugEl.scrollHeight;
-            }
-        }
-
-        // Initialize scene
-        const scene = new THREE.Scene();
-        debug('Scene created');
-        
-        // Initialize camera
-        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-        camera.position.set(0, 1, 3);
-        camera.lookAt(0, 0, 0);
-        debug('Camera initialized');
-        
-        // Initialize renderer
-        const renderer = new THREE.WebGLRenderer({ 
-            alpha: true,
-            antialias: true,
-            powerPreference: 'high-performance'
-        });
-        renderer.setSize(200, 200);
-        renderer.setClearColor(0x000000, 0);
-        renderer.outputEncoding = THREE.sRGBEncoding;
-        debug('Renderer created');
-
-        // Add to container
-        const container = document.getElementById('dog-container');
-        if (!container) {
-            debug('ERROR: Container not found!');
-        } else {
-            container.appendChild(renderer.domElement);
-            debug('Renderer added to container');
-        }
-
-        // Add lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-        scene.add(ambientLight);
-        
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(1, 2, 3);
-        scene.add(directionalLight);
-        debug('Lights added');
-
-        // Create temporary cube
-        const cube = new THREE.Mesh(
-            new THREE.BoxGeometry(1, 1, 1),
-            new THREE.MeshPhongMaterial({ color: 0xff0000 })
-        );
-        scene.add(cube);
-        debug('Temporary cube added');
-
-        // Load model
-        const loader = new GLTFLoader();
-        const modelPath = '../img/playful_dog.glb';
-        debug('Attempting to load model from: ' + modelPath);
-
-        // First check if file exists
-        fetch(modelPath)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                debug('Model file exists, loading...');
-                return loadModel();
-            })
-            .catch(error => {
-                debug('Error checking model file: ' + error.message);
-                debug('Trying alternate path...');
-                return loadModel('./img/playful_dog.glb');
-            });
-
-        function loadModel(path = modelPath) {
-            loader.load(
-                path,
-                (gltf) => {
-                    debug('Model loaded successfully!');
-                    
-                    const model = gltf.scene;
-                    model.scale.set(0.3, 0.3, 0.3);
-                    model.position.y = -0.5;
-
-                    // Debug model structure
-                    model.traverse((child) => {
-                        if (child.isMesh) {
-                            debug('Found mesh: ' + child.name);
-                            debug('Material type: ' + child.material.type);
-                            debug('Geometry vertices: ' + child.geometry.attributes.position.count);
-                        }
-                    });
-
-                    scene.add(model);
-                    scene.remove(cube);
-                    debug('Model added to scene');
-
-                    // Add mouse interaction
-                    window.addEventListener('mousemove', (e) => {
-                        const x = (e.clientX / window.innerWidth) * 2 - 1;
-                        const y = -(e.clientY / window.innerHeight) * 2 + 1;
-                        model.rotation.y = x * Math.PI / 2;
-                        model.rotation.x = y * Math.PI / 4;
-                    });
-                },
-                (progress) => {
-                    if (progress.lengthComputable) {
-                        const percent = (progress.loaded / progress.total) * 100;
-                        debug(`Loading progress: ${percent.toFixed(2)}%`);
-                    }
-                },
-                (error) => {
-                    debug('Error loading model: ' + error.message);
-                    if (error.target) {
-                        debug('Error details: ' + JSON.stringify({
-                            status: error.target.status,
-                            statusText: error.target.statusText,
-                            responseType: error.target.responseType
-                        }));
-                    }
-                }
-            );
-        }
-
-        // Animation loop
-        function animate() {
-            requestAnimationFrame(animate);
-            if (cube.parent === scene) {
-                cube.rotation.y += 0.01;
-            }
-            renderer.render(scene, camera);
-        }
-        animate();
-        debug('Animation started');
-
-        // Log WebGL info
-        const gl = renderer.getContext();
-        debug('WebGL Info: ' + JSON.stringify({
-            vendor: gl.getParameter(gl.VENDOR),
-            renderer: gl.getParameter(gl.RENDERER),
-            version: gl.getParameter(gl.VERSION)
-        }));
-    </script>
 </body>
 
 </html>
