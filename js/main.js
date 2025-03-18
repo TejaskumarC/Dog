@@ -67,3 +67,49 @@
     
 })(jQuery);
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const defaultCursor = document.getElementById('default-cursor');
+  const pointerCursor = document.getElementById('pointer-cursor');
+  let isCursorHidden = true;
+
+  // Update cursor position on mouse move
+  document.addEventListener('mousemove', (e) => {
+    if (isCursorHidden) {
+      defaultCursor.classList.remove('hidden-cursor');
+      isCursorHidden = false;
+    }
+    defaultCursor.style.left = `${e.clientX}px`;
+    defaultCursor.style.top = `${e.clientY}px`;
+    pointerCursor.style.left = `${e.clientX}px`;
+    pointerCursor.style.top = `${e.clientY}px`;
+  });
+
+  // Hide cursors when leaving the window
+  document.addEventListener('mouseleave', () => {
+    defaultCursor.classList.add('hidden-cursor');
+    pointerCursor.classList.add('hidden-cursor');
+    isCursorHidden = true;
+  });
+
+  // Switch to pointer cursor on hover (hide default cursor)
+  const interactiveElements = document.querySelectorAll('button, a, [data-cursor="pointer"]');
+  interactiveElements.forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+      defaultCursor.classList.add('hidden-cursor'); // Hide default cursor
+      pointerCursor.classList.remove('hidden-cursor'); // Show pointer cursor
+    });
+    element.addEventListener('mouseleave', () => {
+      defaultCursor.classList.remove('hidden-cursor'); // Show default cursor
+      pointerCursor.classList.add('hidden-cursor'); // Hide pointer cursor
+    });
+  });
+
+  // Optional: Add a "click" effect
+  document.addEventListener('mousedown', () => {
+    pointerCursor.style.transform = 'scale(0.8)';
+  });
+  document.addEventListener('mouseup', () => {
+    pointerCursor.style.transform = 'scale(1)';
+  });
+});
