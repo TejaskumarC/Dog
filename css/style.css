@@ -53,7 +53,49 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+/* Hide default cursor globally */
+* {
+  cursor: none;
+}
+
+/* Hide default cursor globally */
+* {
+  cursor: none;
+}
+
+/* Ensure buttons and links also hide the default cursor */
+button, a {
+  cursor: none;
+}
+
+/* Hide default cursor globally */
+* {
+  cursor: none !important; /* Force override */
+}
+
+/* Base cursor styles */
+#default-cursor,
+#pointer-cursor {
+  position: fixed;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  z-index: 9999;
+  transition: transform 0.1s;
+}
+
+/* Hide cursors initially */
+.hidden-cursor {
+  display: none;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
 body {
+  cursor: none;
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1rem;
